@@ -1,10 +1,10 @@
 scriptencoding utf-8
 " ============================================================================
-" Author: TaoBeier
+" Author: TaoBeier, Zhen Wang
 " Blog: http://moelove.info
-" Version: v1.1.0
-" Update Time: 2016-09-25
-
+" Version: v1.2.0
+" Update Time: 2017-03-15
+" For Windows version
 " ============================================================================
 " Vundle initialization
 " Avoid modify this section, unless you are very sure of what you are doing
@@ -14,18 +14,18 @@ set nocompatible
 
 " Setting up Vundle - the best vim plugin manager
 let iCanHazVundle=1
-let vundle_readme=expand('~/.vim/bundle/vundle/README.md')
+let vundle_readme=expand('$HOME/.vim/bundle/vundle/README.md')
 if !filereadable(vundle_readme)
     echo "Installing Vundle..."
     echo ""
-    silent !mkdir -p ~/.vim/bundle
-    silent !git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/vundle
+    silent !mkdir -p $HOME/.vim/bundle
+    silent !git clone https://github.com/VundleVim/Vundle.vim.git $HOME/.vim/bundle/vundle
     let iCanHazVundle=0
 endif
 
 filetype off
 
-set rtp+=~/.vim/bundle/vundle/
+set rtp+=$HOME/.vim/bundle/vundle/
 call vundle#rc()
 
 " let Vundle manage Plugins
@@ -266,14 +266,14 @@ set wildmenu
 set wildmode=full
 
 " better backup, swap and undos storage
-set directory=~/.vim/dirs/tmp     " directory to place swap files in
+set directory=$HOME/.vim/dirs/tmp     " directory to place swap files in
 set backup                        " make backup files
-set backupdir=~/.vim/dirs/backups " where to put backup files
+set backupdir=$HOME/.vim/dirs/backups " where to put backup files
 set undofile                      " persistent undos - undo after you re-open the file
-set undodir=~/.vim/dirs/undos
-set viminfo+=n~/.vim/dirs/viminfo
+set undodir=$HOME/.vim/dirs/undos
+set viminfo+=n$HOME/.vim/dirs/viminfo
 " store yankring history file there too
-let g:yankring_history_dir = '~/.vim/dirs/'
+let g:yankring_history_dir = '$HOME/.vim/dirs/'
 
 " create needed directories if they don't exist
 if !isdirectory(&backupdir)
